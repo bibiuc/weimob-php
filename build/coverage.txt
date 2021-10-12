@@ -1,0 +1,28 @@
+
+
+Code Coverage Report:     
+  2021-10-12 11:14:16     
+                          
+ Summary:                 
+  Classes: 20.00% (2/10)  
+  Methods: 33.33% (13/39) 
+  Lines:   35.93% (83/231)
+
+Kiduc\Weimob
+  Methods:  50.00% ( 2/ 4)   Lines:  37.50% (  9/ 24)
+Kiduc\Weimob\Exception\ValidationException
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  3/  3)
+Kiduc\Weimob\Exception\WeimobException
+  Methods: 100.00% ( 1/ 1)   Lines: 100.00% (  2/  2)
+Kiduc\Weimob\Helpers\Caller
+  Methods:  50.00% ( 1/ 2)   Lines:  54.55% (  6/ 11)
+Kiduc\Weimob\Helpers\Router
+  Methods:  20.00% ( 1/ 5)   Lines:  81.25% ( 26/ 32)
+Kiduc\Weimob\Http\Request
+  Methods:  14.29% ( 1/ 7)   Lines:   9.33% (  7/ 75)
+Kiduc\Weimob\Http\RequestBuilder
+  Methods:  42.86% ( 3/ 7)   Lines:  70.00% ( 21/ 30)
+Kiduc\Weimob\Http\Response
+  Methods:  16.67% ( 1/ 6)   Lines:   6.45% (  2/ 31)
+Kiduc\Weimob\Routes\Oauth
+  Methods:  66.67% ( 2/ 3)   Lines:  63.64% (  7/ 11)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="" tests="4" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.023104">
+    <testsuite name="Kiduc Weimob Test Suite" tests="4" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.023104">
+      <testsuite name="Kiduc\Weimob\Tests\Routes\OauthTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/Routes/OauthTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.013206">
+        <testcase name="testAuthorize" class="Kiduc\Weimob\Tests\Routes\OauthTest" classname="Kiduc.Weimob.Tests.Routes.OauthTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/Routes/OauthTest.php" line="12" assertions="1" time="0.013206"/>
+      </testsuite>
+      <testsuite name="Kiduc\Weimob\Tests\WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.009899">
+        <testcase name="testInitializeWithInvalidSecretKey" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="11" assertions="1" time="0.003401"/>
+        <testcase name="testVersion" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="16" assertions="1" time="0.002205"/>
+        <testcase name="testGetShouldBringRouter" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="21" assertions="2" time="0.004293"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>
