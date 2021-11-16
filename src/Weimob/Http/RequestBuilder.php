@@ -38,6 +38,7 @@ class RequestBuilder
     {
         $this->request->endpoint = $this->interface[RouteInterface::ENDPOINT_KEY];
         $this->request->method = $this->interface[RouteInterface::METHOD_KEY];
+        $this->moveRootToPayload();
         $this->moveArgsToSentargs();
         $this->putArgsIntoEndpoint($this->request->endpoint);
         $this->packagePayload();
@@ -72,6 +73,23 @@ class RequestBuilder
             if (in_array($key, $args)) {
                 $this->sentargs[$key] = $value;
                 unset($this->payload[$key]);
+            }
+        }
+    }
+
+    public function moveRootToPayload()
+    {
+        if (array_key_exists(RouteInterface::ARGS_KEY, $this->interface)) {
+            $args = $this->interface[RouteInterface::ARGS_KEY];
+        } else if (array_key_exists(RouteInterface::PARAMS_KEY, $this->interface)) {
+            $args = $this->interface[RouteInterface::PARAMS_KEY];
+        } else {
+            return;
+        }
+        $config = $this->weimobObj;
+        foreach ($args as $arg) {
+            if (!isset($this->payload[$arg]) && isset($config->$arg)) {
+                $this->payload[$arg] = $config->$arg;
             }
         }
     }
