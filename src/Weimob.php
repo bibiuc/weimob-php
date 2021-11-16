@@ -12,21 +12,17 @@ class Weimob
 {
     public $client_id;
     public $client_secret;
-    public $login_url;
-    public $callback_url;
     public $store;
     public $custom_routes = [];
-    const VERSION = "0.0.1";
+    const VERSION = "0.0.2";
 
-    public function __construct($client_id, $client_secret, $login_url = '', $callback_url = '', StoreInterface $store = null)
+    public function __construct($client_id, $client_secret, StoreInterface $store = null)
     {
         if (!is_string($client_id) || !is_string($client_secret)) {
             throw new \InvalidArgumentException('This Is Not A Valid Weimob Client Secret Key Or A Valid Weimob Client Id Key.');
         }
         $this->client_id = $client_id;
         $this->client_secret = $client_secret;
-        $this->login_url = $login_url;
-        $this->callback_url = $callback_url;
         $this->store = $store;
     }
 

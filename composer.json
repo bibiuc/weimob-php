@@ -2,6 +2,7 @@
     "name": "kiduc/weimob-php",
     "description": "Weimob Library for PHP",
     "license": "MIT",
+    "version": "0.0.2",
     "keywords": [
         "weimob",
         "微盟",

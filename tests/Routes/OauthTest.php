@@ -11,7 +11,7 @@ class OauthTest extends TestCase
 {
     public function testAuthorize()
     {
-        $r = new Weimob('1', '1', null, null, null);
+        $r = new Weimob('1', '1', null);
         $url = $r->oauth->authorize([
             'enter' => 'vm',
             'view' => 'pc',
