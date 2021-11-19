@@ -3,7 +3,6 @@
 
 namespace Kiduc;
 
-use Kiduc\Weimob\Contracts\StoreInterface;
 use Kiduc\Weimob\Helpers\Router;
 use Kiduc\Weimob\Contracts\RouteInterface;
 use Kiduc\Weimob\Exception\ValidationException;
@@ -12,18 +11,16 @@ class Weimob
 {
     public $client_id;
     public $client_secret;
-    public $store;
     public $custom_routes = [];
     const VERSION = "0.0.2";
 
-    public function __construct($client_id, $client_secret, StoreInterface $store = null)
+    public function __construct($client_id, $client_secret)
     {
         if (!is_string($client_id) || !is_string($client_secret)) {
             throw new \InvalidArgumentException('This Is Not A Valid Weimob Client Secret Key Or A Valid Weimob Client Id Key.');
         }
         $this->client_id = $client_id;
         $this->client_secret = $client_secret;
-        $this->store = $store;
     }
 
 

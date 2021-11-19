@@ -115,6 +115,16 @@ class Request
         }
     }
 
+    public function isAccessTokenExpired()
+    {
+        return false;
+    }
+
+    public function isRefreshTokenExpired()
+    {
+        return false;
+    }
+
     public function attemptCurl()
     {
         //open connection

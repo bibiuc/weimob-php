@@ -10,7 +10,7 @@ class WeimobTest extends TestCase
 {
     public function testInitializeWithInvalidSecretKey() {
         $this->expectException(\InvalidArgumentException::class);
-        $w = new  Weimob(null, null, null);
+        $w = new  Weimob(null, null);
     }
 
     public function testVersion()
@@ -20,7 +20,7 @@ class WeimobTest extends TestCase
 
     public function testGetShouldBringRouter()
     {
-        $w = new  Weimob('i', 's',  null);
+        $w = new  Weimob('i', 's');
         $this->assertInstanceOf(Router::class, $w->oauth);
         $this->expectException(ValidationException::class);
         $this->assertNull($w->nonexistent);

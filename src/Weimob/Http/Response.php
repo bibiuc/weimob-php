@@ -25,9 +25,9 @@ class Response
 
     private function parsePaystackResponse()
     {
-        $resp = \json_decode($this->body);
+        $resp = \json_decode($this->body, true);
 
-        if ($resp === null || !property_exists($resp, 'status') || !$resp->status) {
+        if ($resp === null || isset($resp['error']) ) {
             throw new ApiException(
                 "Paystack Request failed with response: '" .
                 $this->messageFromApiJson($resp)."'",
@@ -43,18 +43,11 @@ class Response
     {
         $message = $this->body;
         if ($resp !== null) {
-            if (property_exists($resp, 'message')) {
-                $message = $resp->message;
+            if (isset($resp['error_description'])) {
+                $message = $resp['error_description'];
             }
-            if (property_exists($resp, 'errors') && ($resp->errors instanceof \stdClass)) {
-                $message .= "\nErrors:\n";
-                foreach ($resp->errors as $field => $errors) {
-                    $message .= "\t" . $field . ":\n";
-                    foreach ($errors as $_unused => $error) {
-                        $message .= "\t\t" . $error->rule . ": ";
-                        $message .= $error->message . "\n";
-                    }
-                }
+            if (isset($resp['error'])) {
+                $message .= "\n".$resp['error'];
             }
         }
         return $message;

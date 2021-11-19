@@ -26,12 +26,12 @@ class RequestBuilder
 
     public function isRedirect()
     {
-        return $this->interface[RouteInterface::IS_REDIRECT] ?: false;
+        return isset($this->interface[RouteInterface::IS_REDIRECT]) ? $this->interface[RouteInterface::IS_REDIRECT] : false;
     }
 
     public function isNeedOauth()
     {
-        return !($this->interface[RouteInterface::NOT_NEED_TOKEN_KEY] ?: false);
+        return !(isset($this->interface[RouteInterface::NOT_NEED_TOKEN_KEY]) ? $this->interface[RouteInterface::NOT_NEED_TOKEN_KEY] : false);
     }
 
     public function build()
@@ -48,12 +48,20 @@ class RequestBuilder
     public function packagePayload()
     {
         if (is_array($this->payload) && count($this->payload)) {
-            if ($this->request->method === RouteInterface::GET_METHOD) {
-                $this->request->endpoint = $this->request->endpoint . '?' . http_build_query($this->payload);
-            } else {
-                $this->request->body = json_encode($this->payload);
+            $this->request->endpoint = $this->request->endpoint . '?' . $this->httpBuildQuery($this->payload);
+            if ($this->request->method !== RouteInterface::GET_METHOD) {
+                $this->request->body = $this->getBody();
             }
         }
+    }
+
+    public function getBody()
+    {
+        $payload = json_decode(json_encode($this->payload), true);
+        if (isset($payload['accesstoken'])) {
+            unset($payload['accesstoken']);
+        }
+        return json_encode($payload);
     }
 
     public function putArgsIntoEndpoint(&$endpoint)
@@ -61,6 +69,27 @@ class RequestBuilder
         foreach ($this->sentargs as $key => $value) {
             $endpoint = str_replace('{' . $key . '}', $value, $endpoint);
         }
+    }
+
+    public function httpBuildQuery($payload)
+    {
+        $url = [];
+        if ($this->isNeedOauth() && isset($payload['accesstoken']) && !empty($payload['accesstoken'])) {
+            $url[] = 'accesstoken='.$payload['accesstoken'];
+        }
+        if ($this->request->method !== RouteInterface::GET_METHOD && !empty($url)) {
+            return implode('&', $url);
+        }
+        if (!array_key_exists(RouteInterface::PARAMS_KEY, $this->interface) || empty($this->interface[RouteInterface::PARAMS_KEY])) {
+            return implode('&', $url);
+        }
+        $keys = $this->interface[RouteInterface::PARAMS_KEY];
+        foreach ($keys as $key) {
+            if (isset($payload[$key]) && !empty($payload[$key])) {
+                $url[]= $key.'='.$payload[$key];
+            }
+        }
+        return implode('&', $url);
     }
 
     public function moveArgsToSentargs()

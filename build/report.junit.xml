@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="4" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.022756">
-    <testsuite name="Kiduc Weimob Test Suite" tests="4" assertions="5" errors="0" warnings="0" failures="0" skipped="0" time="0.022756">
-      <testsuite name="Kiduc\Weimob\Tests\Routes\OauthTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/Routes/OauthTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="0" skipped="0" time="0.012792">
-        <testcase name="testAuthorize" class="Kiduc\Weimob\Tests\Routes\OauthTest" classname="Kiduc.Weimob.Tests.Routes.OauthTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/Routes/OauthTest.php" line="12" assertions="1" time="0.012792"/>
+  <testsuite name="" tests="4" assertions="5" errors="0" warnings="0" failures="1" skipped="0" time="0.024072">
+    <testsuite name="Kiduc Weimob Test Suite" tests="4" assertions="5" errors="0" warnings="0" failures="1" skipped="0" time="0.024072">
+      <testsuite name="Kiduc\Weimob\Tests\Routes\OauthTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/Routes/OauthTest.php" tests="1" assertions="1" errors="0" warnings="0" failures="1" skipped="0" time="0.014666">
+        <testcase name="testAuthorize" class="Kiduc\Weimob\Tests\Routes\OauthTest" classname="Kiduc.Weimob.Tests.Routes.OauthTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/Routes/OauthTest.php" line="12" assertions="1" time="0.014666">
+          <failure type="PHPUnit\Framework\ExpectationFailedException">Kiduc\Weimob\Tests\Routes\OauthTest::testAuthorize
+Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'https://dopen.weimob.com/fuwu/b/oauth2/authorize?client_id=1&amp;enter=vm&amp;redirect_uri=https://baidu.com&amp;response_type=code&amp;scope=default&amp;view=pc'
++'https://dopen.weimob.com/fuwu/b/oauth2/authorize?enter=vm&amp;view=pc&amp;response_type=code&amp;scope=default&amp;client_id=1&amp;redirect_uri=https://baidu.com'
+
+/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/Routes/OauthTest.php:22</failure>
+        </testcase>
       </testsuite>
-      <testsuite name="Kiduc\Weimob\Tests\WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.009964">
-        <testcase name="testInitializeWithInvalidSecretKey" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="11" assertions="1" time="0.003413"/>
-        <testcase name="testVersion" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="16" assertions="1" time="0.002219"/>
-        <testcase name="testGetShouldBringRouter" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="21" assertions="2" time="0.004332"/>
+      <testsuite name="Kiduc\Weimob\Tests\WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.009406">
+        <testcase name="testInitializeWithInvalidSecretKey" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="11" assertions="1" time="0.002873"/>
+        <testcase name="testVersion" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="16" assertions="1" time="0.002233"/>
+        <testcase name="testGetShouldBringRouter" class="Kiduc\Weimob\Tests\WeimobTest" classname="Kiduc.Weimob.Tests.WeimobTest" file="/Users/kiduc/Documents/slcx.taxi/weimob-php/tests/WeimobTest.php" line="21" assertions="2" time="0.004300"/>
       </testsuite>
     </testsuite>
   </testsuite>

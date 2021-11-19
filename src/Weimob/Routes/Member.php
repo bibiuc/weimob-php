@@ -14,7 +14,7 @@ class Member implements RouteInterface
         return RouteInterface::WEIMOB_API_ROOT;
     }
 
-    public function getMemberList()
+    public static function getMemberList()
     {
         return [
             RouteInterface::METHOD_KEY => RouteInterface::POST_METHOD,
@@ -26,7 +26,7 @@ class Member implements RouteInterface
         ];
     }
 
-    public function addMemberPointAmount()
+    public static function addMemberPointAmount()
     {
         return [
             RouteInterface::METHOD_KEY => RouteInterface::POST_METHOD,

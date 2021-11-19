@@ -10,11 +10,12 @@ use Kiduc\Weimob\Exception\ValidationException;
 class Router
 {
     public static $ROUTES = [
-        'oauth', 'membership', 'member'
+        'oauth', 'membership', 'member', 'base'
     ];
 
     public static $ROUTE_SINGULAR_LOOKUP = [
         'oauth' => 'oauth',
+        'base' => 'base',
         'membership' => 'membership',
         'member' => 'member'
     ];
