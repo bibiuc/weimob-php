@@ -45,4 +45,24 @@ class Member implements RouteInterface
             ]
         ];
     }
+
+    public static function removeMemberPointAmount()
+    {
+
+        return [
+            RouteInterface::METHOD_KEY => RouteInterface::POST_METHOD,
+            RouteInterface::ENDPOINT_KEY => Member::root().'/mc/member/useMemberPointAmountOffLine',
+            RouteInterface::PARAMS_KEY => [
+                RouteInterface::ID,
+                'amount',
+                'point',
+                'reason',
+                'storeId',
+                'channelType',
+                'attachId',
+                'requestId',
+                'mid'
+            ]
+        ];
+    }
 }
