@@ -19,6 +19,6 @@ class OauthTest extends TestCase
             'scope' => 'default',
             'redirect_uri' => 'https://baidu.com'
         ]);
-        $this->assertEquals('https://dopen.weimob.com/fuwu/b/oauth2/authorize?client_id=1&enter=vm&redirect_uri=https://baidu.com&response_type=code&scope=default&view=pc', $url);
+        $this->assertEquals('https://dopen.weimob.com/fuwu/b/oauth2/authorize?enter=vm&view=pc&response_type=code&scope=default&client_id=1&redirect_uri=https://baidu.com', $url);
     }
 }
