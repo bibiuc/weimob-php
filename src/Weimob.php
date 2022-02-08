@@ -12,7 +12,7 @@ class Weimob
     public $client_id;
     public $client_secret;
     public $custom_routes = [];
-    const VERSION = "0.0.5";
+    const VERSION = "0.0.6";
 
     public function __construct($client_id, $client_secret)
     {
