@@ -65,4 +65,26 @@ class Member implements RouteInterface
             ]
         ];
     }
+
+    public static function getMemberScores()
+    {
+
+        return [
+            RouteInterface::METHOD_KEY => RouteInterface::POST_METHOD,
+            RouteInterface::ENDPOINT_KEY => Member::root().'/mc/member/getMemberPointLogsForBackend',
+            RouteInterface::PARAMS_KEY => [
+                'mid',
+                RouteInterface::ID,
+                'startTime',
+                'endTime',
+                'page',
+                'pageSize',
+                'channelType',
+                'pointFlowId',
+                'attachId',
+                'pointTid',
+                'storeId'
+            ]
+        ];
+    }
 }
