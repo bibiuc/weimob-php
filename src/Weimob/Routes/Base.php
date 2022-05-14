@@ -17,11 +17,8 @@ class Base implements RouteInterface
     public static function getInfo()
     {
         return [
-            RouteInterface::METHOD_KEY => RouteInterface::POST_METHOD,
-            RouteInterface::ENDPOINT_KEY => Member::root().'/open/usercenter/getWeimobUserInfo',
-            RouteInterface::PARAMS_KEY => [
-                'accesstoken'
-            ]
+            RouteInterface::METHOD_KEY => RouteInterface::GET_METHOD,
+            RouteInterface::ENDPOINT_KEY => Member::root().'/open/usercenter/getWeimobUserInfo'
         ];
     }
 }
