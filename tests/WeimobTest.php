@@ -15,7 +15,7 @@ class WeimobTest extends TestCase
 
     public function testVersion()
     {
-        $this->assertEquals("0.0.6", Weimob::VERSION);
+        $this->assertEquals("0.0.7", Weimob::VERSION);
     }
 
     public function testGetShouldBringRouter()
