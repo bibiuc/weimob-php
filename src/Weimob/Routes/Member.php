@@ -87,4 +87,22 @@ class Member implements RouteInterface
             ]
         ];
     }
+
+    public static function getMemberDetail()
+    {
+
+        return [
+            RouteInterface::METHOD_KEY => RouteInterface::POST_METHOD,
+            RouteInterface::ENDPOINT_KEY => Member::root().'/mc/member/getMemberDetail',
+            RouteInterface::PARAMS_KEY => [
+                'mid',
+                RouteInterface::ID,
+                'type',
+                'code',
+                'phone',
+                'isNeedTagsInfo',
+                'isNeedExtInfo'
+            ]
+        ];
+    }
 }
